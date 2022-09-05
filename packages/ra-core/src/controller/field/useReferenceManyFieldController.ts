@@ -154,7 +154,7 @@ export const useReferenceManyFieldController = (
         reference,
         {
             target,
-            id: get(record, source),
+            id: source ? get(record, source) : undefined,
             pagination: { page, perPage },
             sort,
             filter: filterValues,
@@ -184,7 +184,6 @@ export const useReferenceManyFieldController = (
     return {
         sort,
         data,
-        defaultTitle: null,
         displayedFilters,
         error,
         filterValues,

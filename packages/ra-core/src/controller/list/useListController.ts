@@ -204,7 +204,7 @@ const defaultSort = {
 
 export interface ListControllerResult<RecordType extends RaRecord = any> {
     sort: SortPayload;
-    data: RecordType[];
+    data?: RecordType[];
     defaultTitle?: string;
     displayedFilters: any;
     error?: any;
@@ -220,7 +220,7 @@ export interface ListControllerResult<RecordType extends RaRecord = any> {
     page: number;
     perPage: number;
     refetch: (() => void) | UseGetListHookValue<RecordType>['refetch'];
-    resource: string;
+    resource?: string;
     selectedIds: RecordType['id'][];
     setFilters: (
         filters: any,
@@ -231,9 +231,9 @@ export interface ListControllerResult<RecordType extends RaRecord = any> {
     setPerPage: (page: number) => void;
     setSort: (sort: SortPayload) => void;
     showFilter: (filterName: string, defaultValue: any) => void;
-    total: number;
-    hasNextPage: boolean;
-    hasPreviousPage: boolean;
+    total?: number;
+    hasNextPage?: boolean;
+    hasPreviousPage?: boolean;
 }
 
 export const injectedProps = [
